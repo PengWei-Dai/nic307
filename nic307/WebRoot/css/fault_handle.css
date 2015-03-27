@@ -1,0 +1,31 @@
+	/*故障处理页面css*/
+
+
+
+	/*故障处理页面头部css*/
+
+#fault_title{
+	padding-top:0.01px;
+	height: 72px;
+	background-color: red;
+}
+
+	/*故障处理页面列表css*/
+
+#fault_lists{
+	width: 200px;
+	height: 800px;
+	background-color: #666;
+	padding-top: 70px;
+	padding-left: 30px;
+}
+
+#fault_lists button{
+	margin-top:10px;
+}
+
+	/*故障处理页面内容css*/
+#fault_content{
+	float: left;
+	background-color: #ccc;
+}

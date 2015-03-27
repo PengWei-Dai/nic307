@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="user" location="76,77" size="185,90">
+    <action name="UserAction" location="-30,16" size="150,40">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="regist_success.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="user_regist.jsp" path="/jsp\user_regist.jsp" location="-330,403" size="150,55" />
+  <webResource name="regist_success.jsp" path="/jsp\regist_success.jsp" location="-342,394" size="150,55" />
+  <webResource name="regist_success.jsp" path="/jsp/regist_success.jsp" location="396,78" size="150,55" />
+</Struts2Diagram>
+

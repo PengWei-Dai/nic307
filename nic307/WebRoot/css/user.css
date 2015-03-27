@@ -1,0 +1,14 @@
+#user_regist{
+	margin-left: 480px;
+}
+
+/*让内容与导航栏有一定的间距*/
+body{
+	margin-top: 70px;
+}
+
+/*设置user_regist内容的宽度*/
+#regist_content{
+	width: 650px;
+	margin:0 auto;
+}
