@@ -3,6 +3,8 @@
  */
 package net.nic307.user.server;
 
+import java.util.List;
+
 import net.nic307.user.dao.UserDao;
 import net.nic307.user.domain.User;
 
@@ -17,12 +19,24 @@ public class UserServer {
 	
 	private UserDao userDao;
 	
+	//User×¢²á
 	public void registUser(User user){
 		userDao.save(user);
 	}
+	//ÓÃ»§µÇÂ¼
+	public boolean loginUser(String userName, String userPassword) {
+		List<User> users = userDao.findByName(userName);
+		String password="";
+		if(users.size()>0){
+			password = users.get(0).getUserPassword();
+		}else return false;
+		if(password.equals(userPassword)){
+			return true;
+		}
+		else return false;
+	}
+	
 
-	
-	
 	
 	
 
@@ -32,5 +46,11 @@ public class UserServer {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
+
+
+
+
+
+
 
 }

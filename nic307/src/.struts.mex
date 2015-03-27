@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
-  <package name="user" location="76,77" size="185,90">
-    <action name="UserAction" location="-30,16" size="150,40">
+  <package name="user" location="45,80" size="195,161">
+    <action name="UserRegist" location="-24,22" size="150,40">
       <result name="success">
         <resourceEdge source="success" routing="0" target="regist_success.jsp" />
       </result>
     </action>
+    <action name="UserLogin" location="11,111" size="150,40">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="user_regist.jsp" />
+      </result>
+    </action>
   </package>
-  <webResource name="user_regist.jsp" path="/jsp\user_regist.jsp" location="-330,403" size="150,55" />
-  <webResource name="regist_success.jsp" path="/jsp\regist_success.jsp" location="-342,394" size="150,55" />
-  <webResource name="regist_success.jsp" path="/jsp/regist_success.jsp" location="396,78" size="150,55" />
+  <webResource name="user_regist.jsp" path="/jsp\user_regist.jsp" location="22,403" size="150,55" />
+  <webResource name="regist_success.jsp" path="/jsp\regist_success.jsp" location="10,394" size="150,55" />
+  <webResource name="regist_success.jsp" path="/jsp/regist_success.jsp" location="152,277" size="150,55" />
+  <webResource name="user_regist.jsp" path="/jsp/user_regist.jsp" location="0,0" size="150,55" />
 </Struts2Diagram>
 

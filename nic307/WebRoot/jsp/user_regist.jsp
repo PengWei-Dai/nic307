@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="regist_content"><!--注册页面内容开始-->
        <div class="fault">
      <!-- 表单 -->
-    <form class="form-horizontal" name="user_regist" action="../user/UserAction" method="post">
+    <form class="form-horizontal" name="user_regist" action="../user/UserRegist" method="post">
       <div class="form-group">
         <label for="userName" class="col-sm-2 control-label">姓 名：</label>
         <div class="col-sm-10">

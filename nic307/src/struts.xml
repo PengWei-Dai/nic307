@@ -4,9 +4,11 @@
 	<constant name="struts.devMode" value="true" />
 	<package name="user" namespace="/user" extends="struts-default">
 
-		<action name="UserAction" class="net.nic307.user.action.UserAction"
+		<action name="UserRegist" class="net.nic307.user.action.UserAction"
 			method="register">
-			<result name="success">/jsp/regist_success.jsp</result>
-		</action>
+	<result name="success">/jsp/regist_success.jsp</result></action>		
+		<action name="UserLogin" class="net.nic307.user.action.UserAction"
+			method="login">
+			<result name="success">/jsp/user_regist.jsp</result></action>
 	</package>
 </struts>    

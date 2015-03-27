@@ -23,7 +23,7 @@
 		p:hibernateTemplate-ref="hibernateTemplate"/>
 	<bean id="userServer" class="net.nic307.user.server.UserServer"
 		p:userDao-ref="userDao"/>
-	<bean id="userAction" class="net.nic307.user.action.UserAction"
+	<bean id="userAction" class="net.nic307.user.action.UserAction" scope="prototype"
 		p:userServer-ref="userServer"/>
 	
 	</beans>

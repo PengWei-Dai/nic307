@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </li>
 
           <li id="user_regist">
-            <a href="jsp/user_regist.jsp" data-toggle="modal" data-target="#myModal">
+            <a href="jsp/user_regist.jsp" >
               <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>
               &nbsp;注 册
             </a>
@@ -86,9 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-
     </ol>
-
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
@@ -109,18 +107,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-    </a>
-
-    <!-- 307用户登录
+    </a>   
+    
+   <!-- 307用户登录表单-->
     <div id="user_login">
-
-      <form class="form-inline">
+      <form class="form-inline" name="user_login" action="user/UserLogin" method="post">
         <div class="form-group">
-          <label class="sr-only" for="inputUserId">User Id</label>
-          <input type="text" class="form-control" id="inputUserId" placeholder="User Id"></div>
+          <label class="sr-only" for="userName">UserName</label>
+          <input type="text" class="form-control" name="userName" placeholder="UserName"></div>
         <div class="form-group">
-          <label class="sr-only" for="exampleInputPassword3">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password"></div>
+          <label class="sr-only" for="userPassword">Password</label>
+          <input type="password" class="form-control" name="userPassword" placeholder="Password"></div>
         <div class="checkbox">
           <label>
             <input type="checkbox">Remember me</label>
@@ -128,7 +125,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <button type="submit" class="btn btn-default">Sign in</button>
       </form>
     </div><!-- 307用户登录表单结束-->
-    
   </div><!--轮番图结束-->
 
 

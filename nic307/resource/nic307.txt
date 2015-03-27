@@ -1,0 +1,11 @@
+			
+					开发日记
+3月27日
+	今天将前两天所写静态html网页部分转换成了jsp动态网页，同时创建了user表，已及s2sh框架环境的搭建。在该框架基础上实现了user的注册和登陆。
+	但是还很粗糙，包括：注册验证、登陆验证，已经ajax登陆异步交互没有完成。 明天是休息日，29日需实现。
+	注意：今天遇到一个问题，hibernateTempalte.save的时候，没有向数据库提交数据。  经过Google应该在hibernate的设置项中设置：<property name="hibernate.connection.autocommit">true</property>
+		第二个问题：表单与action数据传递的时候，在表单中应该在name属性中设置和action同样的属性，利用setter注入数据。
+		第三：关于Struts.xml配置：其中package代表了类似于java中包，在同一个包中action不能同名， namespace：代表了在url中的访问路径，eg:"/user"	
+			访问方法：项目名+namespace+action  -->locahost:8080/nic307/user/action
+			具体多个action可以对应同一个实际类。 但是要标注其方法 method:xxx;
+	

@@ -21,8 +21,9 @@ public class UserAction extends ActionSupport{
 	private String userEmail;
 	private UserServer userServer;
 	
-
+	//User×¢²á
 		public String register() throws Exception {
+			System.out.println("tayan");
 	        if(userName != null && userPassword !=null){
 	        	User user = new User();
 	        	user.setUserName(userName);
@@ -37,7 +38,17 @@ public class UserAction extends ActionSupport{
 	        return SUCCESS;
 	    }
 	
-	
+	//UserµÇÂ½
+		public String login() throws Exception{
+			System.out.println("hah");
+			System.out.println(userName+userPassword);
+			 if(userName != null && userPassword !=null){
+
+				if(userServer.loginUser(userName, userPassword)){
+					return SUCCESS;
+				} return null;
+			 }return null;
+		}
 		
 		
 		
