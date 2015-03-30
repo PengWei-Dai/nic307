@@ -1,0 +1,27 @@
+<!DOCTYPE validators PUBLIC 
+"-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+   <field name="userName">
+	<field-validator type="regex">
+	   <param name="trim">true</param>
+	   <param name="expression"><![CDATA[(\b\w{4,8}\b|[\u4e00-\u9fa5]{2,5})]]></param>
+	   <message>用户名格式不正确</message>
+	  </field-validator>
+	  <field-validator type="requiredstring" short-circuit="true">
+        <param name="trim">true</param>
+        <message>用户名不能为空！</message>
+    </field-validator>
+   </field>
+
+   <field name="userPassword">
+     	<field-validator type="date">
+		   <param name="min">4</param>
+		   <param name="max">10</param>
+		   <message>
+		      Birthday must be within ${min} and ${max}
+		   </message>
+		</field-validator>
+   </field>
+</validators>

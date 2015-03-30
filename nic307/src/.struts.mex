@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
-  <package name="user" location="45,80" size="195,161">
-    <action name="UserRegist" location="-24,22" size="150,40">
+  <package name="user" location="32,43" size="194,200">
+    <action name="UserRegist" location="23,32" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="regist_success.jsp" />
       </result>
     </action>
-    <action name="UserLogin" location="11,111" size="150,40">
+    <action name="UserLogin" location="19,106" size="150,62">
       <result name="success">
-        <resourceEdge source="success" routing="0" target="user_regist.jsp" />
+        <resourceEdge source="success" routing="0" target="main.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="index.jsp" />
       </result>
     </action>
   </package>
-  <webResource name="user_regist.jsp" path="/jsp\user_regist.jsp" location="22,403" size="150,55" />
-  <webResource name="regist_success.jsp" path="/jsp\regist_success.jsp" location="10,394" size="150,55" />
-  <webResource name="regist_success.jsp" path="/jsp/regist_success.jsp" location="152,277" size="150,55" />
-  <webResource name="user_regist.jsp" path="/jsp/user_regist.jsp" location="0,0" size="150,55" />
+  <package name="fault" location="684,19" size="189,162">
+    <action name="FaultApply" location="30,38" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="regist_success.jsp" />
+      </result>
+    </action>
+    <action name="FaultPending" location="12,112" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="global" location="838,170" size="177,97">
+    <action name="FaultHandle" location="18,26" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="fault_handle.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="noLogin.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="regist_success.jsp" path="/jsp/regist_success.jsp" location="404,273" size="150,55" />
+  <webResource name="index.jsp" path="/index.jsp" location="310,49" size="150,55" />
+  <webResource name="main.jsp" path="/jsp/main.jsp" location="491,46" size="150,55" />
+  <webResource name="fault_handle.jsp" path="/jsp/fault_handle.jsp" location="844,351" size="150,55" />
+  <webResource name="noLogin.jsp" path="/jsp/noLogin.jsp" location="50,350" size="150,55" />
+  <webResource name="test.jsp" path="/test.jsp" location="500,350" size="150,55" />
 </Struts2Diagram>
 

@@ -3,6 +3,10 @@
  */
 package net.nic307.user.action;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import net.nic307.user.domain.User;
 import net.nic307.user.server.UserServer;
 
@@ -12,7 +16,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author Rain
  * 这是一个将浏览器请求的分发到各个不同的方法中去。
  */
-public class UserAction extends ActionSupport{
+public class UserAction extends ActionSupport implements SessionAware{
 	private String userName;
 	private String userPassword;
 	private String userNumber;
@@ -20,10 +24,11 @@ public class UserAction extends ActionSupport{
 	private String userMajor;
 	private String userEmail;
 	private UserServer userServer;
+	//继承SessionAware，并且实现setter方法，以便获取session
+	private Map session;
 	
 	//User注册
 		public String register() throws Exception {
-			System.out.println("tayan");
 	        if(userName != null && userPassword !=null){
 	        	User user = new User();
 	        	user.setUserName(userName);
@@ -40,14 +45,12 @@ public class UserAction extends ActionSupport{
 	
 	//User登陆
 		public String login() throws Exception{
-			System.out.println("hah");
-			System.out.println(userName+userPassword);
 			 if(userName != null && userPassword !=null){
-
 				if(userServer.loginUser(userName, userPassword)){
+					this.session.put("userName", userName);
 					return SUCCESS;
-				} return null;
-			 }return null;
+				} return INPUT;
+			 }return INPUT;
 		}
 		
 		
@@ -95,6 +98,11 @@ public class UserAction extends ActionSupport{
 	 */
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
+	}
+
+	public void setSession(Map session) {
+		this.session=session;
+		
 	}
 	
 	

@@ -1,0 +1,111 @@
+body{
+	padding-top: 60px;
+		
+}
+body - #main-container{
+	background-color: #666;
+}
+#main-container{
+
+	width: 1000px;
+	margin-top: 20px;
+  border:1px solid #EEEEEE;
+}
+
+.row .col-md-3{
+	
+	
+}
+
+.row .col-md-9{
+	border-right: 1px solid #EEEEEE;
+}
+
+
+.right-list ul{
+	list-style: none;
+}
+.context-title{
+	padding-top: 12px;
+	padding-left: 8px;
+
+	font-family:"microsoft yahei"; 
+	font-size:16px;
+}
+.context-title-foot{
+	float: right;
+	margin-top: 18px;
+	font-size: 14px;
+
+	font-family: ;
+}
+.context-title-foot  li{
+	list-style: none outside none;
+	float: left;
+	margin-left: 15px;
+	color: #666;
+}
+
+.context-title-foot a{
+	color: #666;
+}
+
+.user-head{
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+}
+
+
+.context-body .context-body-img{
+	float:left;
+	width: 36px;
+	height: 36px;
+	margin-left: 8px;
+}
+
+.context-list{
+	line-height: 1em;
+}
+.list-head {
+	display: inline-block;
+	float: left;
+	padding-top: 4px;
+	margin-left: 10px;
+}
+.list-foot{
+	display: block;
+}
+
+.list-foot li{
+	float: left;
+	margin-left: 20px;
+	font-size: 10px;
+}
+.list-foot li a{
+
+}
+.list-hr{
+	margin-top: 18px;
+}
+.list-hr-talk{
+	margin-top: 40px;
+}
+
+.list-context{
+	line-height: 1.5em;
+	font-size: 13px;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+.list-more{
+	padding-top: 10px;
+	margin-left: 50px;
+	font-size: 12px;
+}
+
+/**文章编辑页**/
+
+#article-edit{
+	font-family:sans-serif ;
+}

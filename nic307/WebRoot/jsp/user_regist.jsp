@@ -28,27 +28,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html">Nic 307</a>
+        <a class="navbar-brand" href="../index.jsp">Nic 307</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active">
-            <a href="../index.html">
+            <a href="../index.jsp">
               <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               &nbsp; 首 页
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li>
-            <a href="fault_report.html">
+            <a href="fault_report.jsp">
               <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
               &nbsp;申报故障
             </a>
           </li>
           <li>
-            <a href="fault_handle.html">
+            <a href="fault_handle.jsp">
               <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
               &nbsp;故障处理
             </a>

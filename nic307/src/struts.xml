@@ -2,13 +2,66 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<constant name="struts.devMode" value="true" />
+	
+<!-- =======================user模块========================== --> 
 	<package name="user" namespace="/user" extends="struts-default">
-
-		<action name="UserRegist" class="net.nic307.user.action.UserAction"
-			method="register">
-	<result name="success">/jsp/regist_success.jsp</result></action>		
-		<action name="UserLogin" class="net.nic307.user.action.UserAction"
-			method="login">
-			<result name="success">/jsp/user_regist.jsp</result></action>
+		<action name="UserRegist" class="net.nic307.user.action.UserAction" method="register">
+				<result name="success">/jsp/regist_success.jsp</result>
+		</action>
+		<action name="UserLogin" class="net.nic307.user.action.UserAction" method="login">
+			<result name="success" type="redirect">/main.jsp</result>
+			<result name="input" type="redirect">/index.jsp</result></action>
+	
 	</package>
-</struts>    
+<!-- =======================fault模块========================== --> 
+
+	<package name="fault" namespace="/fault" extends="struts-default">
+		<interceptors>
+			<interceptor name="testInvocation" class="net.nic307.interceptor.TestInterceptor"></interceptor>
+		</interceptors>
+		<action name="FaultApply" class="net.nic307.fault.action.faultAction" method="apply">
+			<result name="success">/jsp/regist_success.jsp</result>
+		</action>
+		<action name="FaultPending" class="net.nic307.fault.action.faultAction" method="getPendingFaults">
+			<interceptor-ref name="testInvocation"></interceptor-ref>
+			<result name="success">/jsp/fault_handle.jsp</result>
+			<result name="login">/jsp/noLogin.jsp</result>
+		</action>
+		<action name="FaultPended" class="net.nic307.fault.action.faultAction" method="getPendedFaults">
+			<interceptor-ref name="testInvocation"></interceptor-ref>
+			<result name="success">/jsp/fault_handle.jsp</result>
+			<result name="login">/jsp/noLogin.jsp</result>
+		</action>
+		<action name="FaultPend" class="net.nic307.fault.action.faultAction" method="getPendFaults">
+			<interceptor-ref name="testInvocation"></interceptor-ref>
+			<result name="success">/jsp/fault_handle.jsp</result>
+			<result name="login">/jsp/noLogin.jsp</result>
+		</action>
+	</package>
+	
+	
+	<!-- =======================Article模块配置========================== --> 
+
+	<package name="article" namespace="/article" extends="struts-default">
+		<action name="ArticleAdd" class="net.nic307.dynamic.action.ArticleAction" method="add">
+			<result name="success">/jsp/t_show.jsp</result>
+		</action>
+		<action name="ArticleLoad" class="net.nic307.dynamic.action.ArticleAction" method="load">
+			<result name="success">/jsp/t_show.jsp</result>
+		</action>
+	</package>
+	
+	
+<!-- =======================通用配置========================== --> 
+	<package name="global"  namespace="/global" extends="struts-default">
+	<!-- 拦截器 -->
+		<interceptors>
+			<interceptor name="testInvocation" class="net.nic307.interceptor.TestInterceptor"></interceptor>
+		</interceptors>
+		<action name="FaultHandle" class="net.nic307.global.GlobalAction" method="GlobalRedirect">
+			<interceptor-ref name="testInvocation"></interceptor-ref>
+			<result name="success">/jsp/fault_handle.jsp</result>
+			<result name="login">/jsp/noLogin.jsp</result>
+		</action>
+		</package>	
+	</struts>    

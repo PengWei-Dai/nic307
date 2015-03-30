@@ -8,4 +8,12 @@
 		第三：关于Struts.xml配置：其中package代表了类似于java中包，在同一个包中action不能同名， namespace：代表了在url中的访问路径，eg:"/user"	
 			访问方法：项目名+namespace+action  -->locahost:8080/nic307/user/action
 			具体多个action可以对应同一个实际类。 但是要标注其方法 method:xxx;
+3月30日
+	今天将用户故障申报的表单页的功能实现了，创建了fault表，同样还是很粗糙。
+	问题：日期类的转化
 	
+4月8日
+	同一个页面若要跳回，应该使用redirect！
+	struts获取session可以实现SessionAware接口
+4月10日
+	想在页面中获取一个List对象，这个对象被存入了值栈中，然而在页面中怎么也获取不到，最后才发现要想在页面中获取的属性，在action中就必须提供getter方法

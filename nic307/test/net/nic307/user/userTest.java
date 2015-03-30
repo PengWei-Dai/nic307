@@ -34,7 +34,7 @@ public class userTest {
 		user.setUserGrade("ggg");
 		user.setUserMajor("mmm");
 		user.setUserNumber("nnnn");
-		user.setUserQQ("111");
+		user.setUserQq("111");
 		user.setUserSex("ssss");
 		session.save(user);
 		session.beginTransaction().commit();
@@ -54,7 +54,7 @@ public class userTest {
 		user.setUserGrade("ggg");
 		user.setUserMajor("mmm");
 		user.setUserNumber("nnnn");
-		user.setUserQQ("111");
+		user.setUserQq("111");
 		user.setUserSex("ssss");
 		userdao.save(user);
 	}
@@ -73,7 +73,7 @@ public class userTest {
 		user.setUserGrade("ggg");
 		user.setUserMajor("mmm");
 		user.setUserNumber("nnnn");
-		user.setUserQQ("111");
+		user.setUserQq("111");
 		user.setUserSex("ssss");
 		System.out.println(user.getUserEmail());
 		ud.save(user);

@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -30,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Nic 307</a>
+        <a class="navbar-brand" href="index.jsp">Nic 307</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,13 +45,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </a>
           </li>
           <li>
-            <a href="jsp/fault_report.html">
+            <a href="jsp/fault_report.jsp">
               <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
               &nbsp;申报故障
             </a>
           </li>
           <li>
-            <a href="jsp/fault_handle.html">
+            <a href="fault/FaultPending">
               <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
               &nbsp;故障处理
             </a>
@@ -111,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
    <!-- 307用户登录表单-->
     <div id="user_login">
-      <form class="form-inline" name="user_login" action="user/UserLogin" method="post">
+    	<form class="form-inline" name="user_login" action="user/UserLogin" method="post">
         <div class="form-group">
           <label class="sr-only" for="userName">UserName</label>
           <input type="text" class="form-control" name="userName" placeholder="UserName"></div>
@@ -162,6 +163,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
   <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script type="text/javascript" src="js/index.js" charset="gbk"></script>
   <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
   <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
   <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

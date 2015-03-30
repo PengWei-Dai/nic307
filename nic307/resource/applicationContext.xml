@@ -22,8 +22,44 @@
 		p:user-ref="user"
 		p:hibernateTemplate-ref="hibernateTemplate"/>
 	<bean id="userServer" class="net.nic307.user.server.UserServer"
-		p:userDao-ref="userDao"/>
+		p:userDao-ref="userDao"
+		p:umiDao-ref="umiDao"
+		p:umi-ref="umi"/>
 	<bean id="userAction" class="net.nic307.user.action.UserAction" scope="prototype"
 		p:userServer-ref="userServer"/>
+	<bean id="umi" class="net.nic307.user.domain.Umi"/>
+	<bean id="umiDao" class="net.nic307.user.dao.UmiDao"
+		p:umi-ref="umi"
+		p:hibernateTemplate-ref="hibernateTemplate"/>
+
 	
+	
+	<!--===================== fault模块的配置====================-->
+	<bean id="fault" class="net.nic307.fault.domain.Fault"/>
+	<bean id="faultDao" class="net.nic307.fault.dao.FaultDao"
+		p:hibernateTemplate-ref="hibernateTemplate"
+		p:fault-ref="fault"/>
+	<bean id="faultServer" class="net.nic307.fault.server.FaultServer"
+		p:faultDao-ref="faultDao"/>
+	<bean id="faultAction" class="net.nic307.fault.action.faultAction" scope="prototype"
+		p:formatDateTime-ref="formatDateTime"
+		p:faultServer-ref="faultServer"/>
+		
+	<!--===================== Article的配置====================-->
+	<bean id="article" class="net.nic307.dynamic.domain.Article"/>
+	<bean id="articleDao" class="net.nic307.dynamic.dao.ArticleDao"
+		p:hibernateTemplate-ref="hibernateTemplate"/>
+	<bean id="articleServer" class="net.nic307.dynamic.server.ArticleServer"
+		p:articleDao-ref="articleDao"/>
+	<bean id="articleAction" class="net.nic307.dynamic.action.ArticleAction" scope="prototype"
+		p:articleServer-ref="articleServer"
+	/>
+
+		
+		
+	<!--===================== 全局性的配置====================-->
+	<bean id="GlobalAction" class="net.nic307.global.GlobalAction"/>
+	
+	<!--===================== 基础设施的配置====================-->
+	<bean id="formatDateTime" class="net.nic307.util.FormatDateTime"/>
 	</beans>

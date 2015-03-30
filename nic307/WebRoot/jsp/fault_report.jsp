@@ -1,3 +1,8 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -22,17 +27,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html">Nic 307</a>
+        <a class="navbar-brand" href="../index.jsp">Nic 307</a>
       </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ><a href="../index.html">
+        <li ><a href="../index.jsp">
           <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp; 首 页 
           <span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="#"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>&nbsp;申报故障</a></li>
-        <li><a href="fault_handle.html"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;故障处理</a></li>
+        <li><a href="../fault/FaultPending"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;故障处理</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>&nbsp;关于我们</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;留言</a></li>
       </ul>
@@ -42,40 +47,44 @@
 
 <!--故障申报表单-->
   <div class="fault">
-    <form class="form-horizontal">
+    <form class="form-horizontal" action="../fault/FaultApply" method="post" name="applyFault">
       <div class="form-group">
-        <label for="inputName" class="col-sm-2 control-label">姓 名：</label>
+        <label for="faultMaster" class="col-sm-2 control-label">姓 名：</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputName" placeholder="张三"></div>
+          <input type="text" class="form-control" name="faultMaster" placeholder="张三"></div>
       </div>
       <div class="form-group">
-        <label for="inputNumber" class="col-sm-2 control-label">电 话：</label>
+        <label for="faultNumber" class="col-sm-2 control-label">电 话：</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputNumber" placeholder="624000"></div>
+          <input type="text" class="form-control" name="faultNumber" placeholder="624000"></div>
       </div>
       <div class="form-group">
-        <label for="inputAddress" class="col-sm-2 control-label">地 址：</label>
+        <label for="faultAddress" class="col-sm-2 control-label">地 址：</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputAddress" placeholder="第二实验楼二期8888号房间"></div>
+          <input type="text" class="form-control" name="faultAddress" placeholder="第二实验楼二期8888号房间"></div>
       </div>
-
+	 <div class="form-group">
+        <label for="faultCollege" class="col-sm-2 control-label">学 院：</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="faultCollege" placeholder="计算机学院"></div>
+      </div>
       <div class="form-group">
-        <label for="inputTime" class="col-sm-2 control-label">希望处理时间：</label>
+        <label for="faultHandleTime" class="col-sm-2 control-label">希望处理时间：</label>
         <label class="checkbox-inline">
-          <input type="radio" name="optionsRadiosinline" id="optionsRadios1" 
-         value="option1" checked>现 在</label>
+          <input type="radio" name="faultHandleTime" id="optionsRadios1" 
+         value="now" checked>现 在</label>
         <label class="checkbox-inline">
-          <input type="radio" name="optionsRadiosinline" id="optionsRadios2" 
-         value="option2">今天下午</label>
+          <input type="radio" name="faultHandleTime" id="optionsRadios2" 
+         value="todayAfter">今天下午</label>
           <label class="checkbox-inline">
-          <input type="radio" name="optionsRadiosinline" id="optionsRadios3" 
-         value="option2">明天早上</label>
+          <input type="radio" name="faultHandleTime" id="optionsRadios3" 
+         value="tomorrowMorning">明天早上</label>
       </div>
 
       <div class="form-group">
-        <label for="inputFault" class="col-sm-2 control-label">故障原因：</label>
+        <label for="faultDesc" class="col-sm-2 control-label">故障描述：</label>
         <div class="col-sm-10">
-           <textarea class="form-control" rows="3" id="inputFault" placeholder="新开网络等等"></textarea></div>
+           <textarea class="form-control" rows="3" name="faultDesc" placeholder="新开网络等等"></textarea></div>
       </div>
 
       <div class="form-group">

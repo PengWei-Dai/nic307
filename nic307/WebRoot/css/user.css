@@ -12,3 +12,6 @@ body{
 	width: 650px;
 	margin:0 auto;
 }
+
+Alter table `nic307`.`user`  
+  add constraint `umi_idfk` foreign key (`umi_ref`) references `nic307`.`umi`(`umi_id`) on update Cascade on delete Cascade
